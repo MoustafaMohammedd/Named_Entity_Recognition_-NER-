@@ -72,7 +72,7 @@ Confusion matrices provide a detailed breakdown of correct and incorrect classif
 
 The confusion matrix for the LSTM model reveals its classification performance across different entity categories. The darker shades on the diagonal indicate a higher number of correct predictions for those specific classes.
 
-![LSTM Confusion Matrix](images/confusion_matrix_bert.png)
+![LSTM Confusion Matrix](images/confusion_matrix_lstm.png)
 
 #### BERT Confusion Matrix
 
