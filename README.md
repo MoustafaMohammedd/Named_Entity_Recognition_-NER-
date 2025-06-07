@@ -28,7 +28,7 @@ Named Entity Recognition (NER) is a crucial task in Natural Language Processing 
 ├── 💻 src/                   # Source code
 ├── 📊 runs/                  # For logging by tensorboard
 ├── 🖼️ images/                # For models plots and confusion matrix
-├── 📓 notebooks/             # Jupyter notebooks
+├── 📓 notebooks/             # Jupyter notebooks for experimentation and analysis
 ├── ⚙️ config/                # Configuration
 ├── 📜 requirements.txt       # Dependencies
 └── 📖 README.md              # This file
@@ -56,13 +56,13 @@ The plots below illustrate the training and test loss, as well as training and t
 
 The LSTM model shows a steady decrease in both training and test loss, indicating good convergence. The accuracy for both training and test sets increases consistently, with the test accuracy closely following the training accuracy, suggesting that the model is generalizing well and not overfitting significantly.
 
-![LSTM Training and Test Loss/Accuracy over Epochs](lstm_plot_training_results.png)
+![LSTM Training and Test Loss/Accuracy over Epochs](images/lstm_plot_training_results.png)
 
 #### BERT Training Performance
 
 The BERT model also demonstrates a clear trend of decreasing loss and increasing accuracy over epochs. Similar to the LSTM, the test loss decreases and test accuracy increases in tandem with their training counterparts, indicating effective learning and generalization.
 
-![BERT Training and Test Loss/Accuracy over Epochs](bert_plot_training.png)
+![BERT Training and Test Loss/Accuracy over Epochs](images/bert_plot_training.png)
 
 ### Model Performance (Confusion Matrices)
 
@@ -72,32 +72,12 @@ Confusion matrices provide a detailed breakdown of correct and incorrect classif
 
 The confusion matrix for the LSTM model reveals its classification performance across different entity categories. The darker shades on the diagonal indicate a higher number of correct predictions for those specific classes.
 
-![LSTM Confusion Matrix](confusion_matrix_lstm.png)
+![LSTM Confusion Matrix](images/confusion_matrix_bert.png)
 
 #### BERT Confusion Matrix
 
 The BERT model's confusion matrix showcases its classification capabilities. A comparison with the LSTM matrix highlights the strengths and weaknesses of each model in distinguishing between various entity types.
 
-![BERT Confusion Matrix](confusion_matrix_bert.png)
-
-```
-
-## Dependencies
-
-The project relies on the following major libraries:
-
--   PyTorch / TensorFlow (depending on implementation choice)
--   Hugging Face Transformers (for BERT)
--   scikit-learn
--   matplotlib
--   seaborn
--   pandas
--   numpy
-
-A complete list of dependencies can be found in `requirements.txt`.
-
-
-
-
+![BERT Confusion Matrix](images/confusion_matrix_bert.png)
 
 
