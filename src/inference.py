@@ -5,16 +5,14 @@ import torch
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
-
 from utils import our_predict_lstm
-from transformers import AutoModel ,AutoTokenizer
+from transformers import AutoModel 
 
 
 our_train_data_loader, our_test_data_loader,our_train_data_set,our_test_data_set=get_datasets_and_loaders_for_lstm()
 our_train_data_loader_bert,our_test_data_loader_bert,our_train_data_set_bert,our_test_data_set_bert=get_datasets_and_loaders_for_bert()
 
 device="cuda" if torch.cuda.is_available() else "cpu"
-
 
 our_lstm_model=OurLSTM(config_hp["MAX_VOCAB"],config_hp["EMBEDDING_SIZE"],config_hp["LSTM_HIDDEN_SIZE"],config_hp["LSTM_N_LAYERS"]).to(device)
 checkpoint = torch.load(r"D:\Named_Entity_Recognition_(NER)\best_model_lstm\final_model.pth")

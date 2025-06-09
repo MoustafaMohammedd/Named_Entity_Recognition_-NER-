@@ -3,7 +3,7 @@ import sys
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if project_root not in sys.path:
     sys.path.insert(0, project_root)
-
+    
 from config.config import config_hp
 import torch
 import torch.nn as nn
@@ -12,7 +12,8 @@ from src.data import get_datasets_and_loaders_for_lstm,get_datasets_and_loaders_
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
 from src.utils import our_accuracy,EarlyStopping,save_checkpoint, plot_l_a
-from transformers import AutoModel ,AutoTokenizer
+from transformers import AutoModel 
+
 
 our_train_data_loader, our_test_data_loader,our_train_data_set,our_test_data_set=get_datasets_and_loaders_for_lstm()
 
@@ -32,9 +33,6 @@ for p in bert_model.parameters():
 our_bert_model=BertModel(bert_model).to(device)
 
 early_stopping = EarlyStopping(patience=5, min_delta=0)
-
-
-
 
 
 def our_train_lstm(epochs,our_model,our_accuracy):
